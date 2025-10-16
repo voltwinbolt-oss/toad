@@ -38,8 +38,11 @@ therefore it's, as solid, as ever of configuration framework and IaC now too.
 ## Prometheus
 
 >Note (humorous):
+
 > If the /metrics requests counters turn into a run away train,
+
 > I promise it is not the Prometheus Counter logic, it's the Mirai's successor IoT B0tnet
+
 > Confirmed on localhost, counters don't change without refreshes over cputime lightyears
 
 
@@ -61,7 +64,11 @@ therefore it's, as solid, as ever of configuration framework and IaC now too.
 ## References
 
 https://flask.palletsprojects.com/en/stable/quickstart/#a-minimal-application
+
 https://docs.python.org/3.9/library/zoneinfo.html
+
 https://prometheus.github.io/client_python/
+
 https://prometheus.github.io/client_python/exporting/http/flask/
+
 https://prometheus.github.io/client_python/instrumenting/counter/
