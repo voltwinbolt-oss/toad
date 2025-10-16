@@ -1,0 +1,4 @@
+venv
+task.readme
+**/__pycache__/
+Readme.sh
