@@ -65,6 +65,8 @@ Predisposed for templating by external tools, like salt or ansible for large inf
 
 Also, akin to Flask it focuses on one thing IaC, hence it's a solid and battle tested frameork way.
 
+![playbook screenshot](readme_assets/terraform-destroy.png)
+
 
 ## Ansible
 
@@ -86,6 +88,7 @@ Confirmed on localhost, counters don't change without refreshes over cputime lig
 
 
 Deployed via playbook on GCP instance successfully
+
 ![playbook screenshot](readme_assets/playbook.png)
 
 
