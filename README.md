@@ -53,6 +53,19 @@ Technical how-to on my setup in GCP:
 https://github.com/voltwinbolt-oss/gcp-gke-test
 
 
+## Terraform 
+(IaC for gcp-micro-instance)
+
+Why Terraform?
+
+I have used it before, and find it a great framework
+with a vast support for a multitude of providers, from cloud to libvirt
+
+Predisposed for templating by external tools, like salt or ansible for large infrastructure maps.
+
+Also, akin to Flask it focuses on one thing IaC, hence it's a solid and battle tested frameork way.
+
+
 ## Ansible
 
 Why Ansible ?
