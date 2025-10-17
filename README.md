@@ -1,3 +1,7 @@
+# URL
+http://35.228.232.172
+
+
 # Decisions
 
 
@@ -69,7 +73,7 @@ Confirmed on localhost, counters don't change without refreshes over cputime lig
 
 
 Deployed via playbook on GCP instance successfully
-![playbook screenshot](readme_assets/playbook.com)
+![playbook screenshot](readme_assets/playbook.png)
 
 
 ```
@@ -113,6 +117,7 @@ curl -s http://localhost:9090/api/v1/targets | jq
 ```
 
 ## Site (tree)
+http://35.228.232.172
 
 ```
 /gandalf
