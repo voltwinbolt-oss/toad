@@ -63,7 +63,7 @@ with a vast support for a multitude of providers, from cloud to libvirt
 
 Predisposed for templating by external tools, like salt or ansible for large infrastructure maps.
 
-Also, akin to Flask it focuses on one thing IaC, hence it's a solid and battle tested frameork way.
+Also, akin to Flask it focuses on one thing IaC, hence it's a solid and battle tested framework (IBM HashiCorp's too - "Solutions for a Small Planet").
 
 ![playbook screenshot](readme_assets/terraform-destroy.png)
 
