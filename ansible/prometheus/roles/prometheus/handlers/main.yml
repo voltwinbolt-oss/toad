@@ -1,0 +1,5 @@
+- name: supervisorctl update
+  ansible.builtin.command: supervisorctl update
+
+- name: restart prometheus
+  ansible.builtin.command: supervisorctl restart prometheus

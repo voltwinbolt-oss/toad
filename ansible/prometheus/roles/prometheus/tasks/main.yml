@@ -1,0 +1,63 @@
+- name: install supervisor
+  apt:
+    name: supervisor
+    state: present
+    update_cache: yes
+
+- name: create group
+  ansible.builtin.group:
+    name: prometheus
+
+- name: create user
+  ansible.builtin.user:
+    name: prometheus
+    group: prometheus
+
+- name: create directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: prometheus
+    group: prometheus
+  loop:
+    - /var/log/prometheus
+    - /opt/prometheus
+    - /data/prometheus
+
+- name: check if downloaded
+  ansible.builtin.stat:
+    path: /opt/prometheus/prometheus-3.7.0.linux-amd64
+  register: downloaded
+
+- name: download
+  ansible.builtin.unarchive:
+    src: https://github.com/prometheus/prometheus/releases/download/v3.7.0/prometheus-3.7.0.linux-amd64.tar.gz
+    dest: /opt/prometheus
+    owner: prometheus
+    group: prometheus
+    remote_src: yes
+  when: not downloaded.stat.exists
+
+- name: symlink executable
+  ansible.builtin.file:
+    src: /opt/prometheus/prometheus-3.7.0.linux-amd64/prometheus
+    dest: /opt/prometheus/prometheus
+    owner: prometheus
+    group: prometheus
+    state: link
+
+- name: prometheus.yml
+  ansible.builtin.template:
+    src: templates/prometheus.yml.j2
+    dest: /opt/prometheus/prometheus.yml
+    owner: prometheus
+    group: prometheus
+  notify:
+    - restart prometheus
+
+- name: supervisor conf
+  copy:
+    src: files/prometheus-supervisor.conf
+    dest: /etc/supervisor/conf.d/prometheus.conf
+  notify:
+    - supervisorctl update

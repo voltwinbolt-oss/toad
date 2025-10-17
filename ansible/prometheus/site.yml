@@ -1,0 +1,7 @@
+- name: Deploy Prometheus
+  hosts: prometheus
+  become: yes
+  vars_files:
+    - vault.yaml
+  roles:
+    - prometheus

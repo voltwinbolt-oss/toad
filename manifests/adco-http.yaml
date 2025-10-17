@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: devel
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adco-service
+  namespace: devel
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: adco
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adco
+  namespace: devel
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: adco
+  template:
+    metadata:
+      labels:
+        app: adco
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: purpose
+                operator: In
+                values:
+                - apps
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - adco
+            topologyKey: kubernetes.io/hostname
+      containers:
+      - image: europe-north1-docker.pkg.dev/viks-test-e4280/devel-repo/adco:v0.0.1
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        name: adco
+        ports:
+        - containerPort: 5000
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
