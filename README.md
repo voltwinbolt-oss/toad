@@ -1,5 +1,17 @@
-# URL
+## Site (tree)
 http://35.228.232.172
+
+```
+/gandalf
+└── Gandalf's picture 
+
+/colombo
+└── Colombo's current time
+
+/metrics
+├── gandalf_requests_total
+└── colombo_requests_total
+```
 
 
 # Decisions
@@ -13,16 +25,6 @@ Micro python webframework,
 no steep learning curve and serves
 the purpose of this task, as well as,
 many enterprises.
-
-Also, a long-long time ago, a savant
-techie friend of mine told me about
-it, in response to me talking about 
-using Django for a simple project.
-
-Django was definitely an overkill
-on the baseline resource level.
-
-His remark still stands true today.
 
 Flask does not aim to offer every
 function a monolithic webframework
@@ -41,14 +43,7 @@ I find it to be a great time to familiarize myself with GCP.
 GCP has been picking up more of the cloud platform market share,
 growing exponentially in the past 5 years.
 
-I was shocked to find out, how frequently the default auto-upgrade
-schedule upgrades the GKE nodes. Must be for security reasons, 
-which are great reasons. 
-
->And there I was thinking nothing is more bleeding edge, than ArchLinux - I'm out-of-date :)
-
-
-Technical how-to on my setup in GCP:
+I put my GCP journey README into separate repository:
 
 https://github.com/voltwinbolt-oss/gcp-gke-test
 
@@ -132,20 +127,6 @@ curl -s http://localhost:9090/api/v1/targets | jq
 }
 ```
 
-## Site (tree)
-http://35.228.232.172
-
-```
-/gandalf
-└── Gandalf's picture 
-
-/colombo
-└── Colombo's current time
-
-/metrics
-├── gandalf_requests_total
-└── colombo_requests_total
-```
 
 
 ## References
