@@ -70,6 +70,10 @@ Why Ansible ?
 Ansible is very ~~pervasive~~ resilient, in a sense, that AWS adopted it for playbooks,
 therefore it's, as solid, as ever of configuration framework and IaC now too.
 
+Deployed Prometheus via playbook on GCP instance successfully
+
+![playbook screenshot](readme_assets/playbook.png)
+
 
 ## Prometheus
 
@@ -81,10 +85,6 @@ I promise it is not the Prometheus Counter logic, it's the Mirai's successor IoT
 
 Confirmed on localhost, counters don't change without refreshes over cputime lightyears.
 
-
-Deployed via playbook on GCP instance successfully
-
-![playbook screenshot](readme_assets/playbook.png)
 
 
 ```
