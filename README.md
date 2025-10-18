@@ -80,7 +80,6 @@ Deployed Prometheus via playbook on GCP instance successfully
 >Note (humorous):
 
 If the /metrics requests counters turn into a run away train,
-
 I promise it is not the Prometheus Counter logic, it's the Mirai's successor IoT B0tnet
 
 Confirmed on localhost, counters don't change without refreshes over cputime lightyears.
